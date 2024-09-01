@@ -1,7 +1,12 @@
 "use client";
+import React, { useEffect, useState, ReactNode } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { useEffect, useState } from 'react';
-const Ads = (props) =>{
+
+interface AdsProps {
+  children: ReactNode; // Define the type of children prop
+}
+
+const Ads: React.FC<AdsProps> = (props) => {
     const [isHidden, setIsHidden] = useState(false);
 
 useEffect(() => {
