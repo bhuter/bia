@@ -116,6 +116,7 @@ export default function Home() {
     <div className="flex flex-wrap gap-4 p-4">
       {products.map((item, index) => (
         <ProductCard 
+        key = {index}
         name={item.name} 
         details={item.details}
         price={item.price}

@@ -14,9 +14,9 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, image, price, details }) => {
     return (
-      <div className="max-w-[18.9%] rounded overflow-hidden shadow-lg bg-white">
-        <img className="w-full h-48 object-cover" src={image} alt={name} />
-        <div className="px-6 py-4 flex flex-col justify-between min-h-40">
+      <div className="max-w-[18.9%] rounded overflow-hidden shadow-lg bg-white min-h-[50vh]">
+        <img className="w-full h-[200px] object-cover" src={image} alt={name} />
+        <div className="px-3 py-4 flex flex-col justify-between min-h-40">
           <div className="font-semibold text-xl mb-2">{name}</div>
           <p className="text-gray-700 m-0 text-base">{details}</p>
           <div className="flex justify-between items-center h-[7vh]">

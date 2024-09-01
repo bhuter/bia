@@ -2,6 +2,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { NextPage } from 'next';
 import 'swiper/swiper-bundle.css'; // Import Swiper styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -39,11 +40,13 @@ const SlideShow: NextPage = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative w-full h-screen">
-            <img
+            <Image
               src={slide.image}
               alt={`Slide ${index}`}
-              className="w-full h-full object-cover"
-              style={{ height: 'calc(92vh - 4rem)' }} // Adjust height based on needs
+              width={1920} // Set the image width here
+              height={1080} // Set the image height here
+              className="w-[100%] h-full object-cover"
+              style={{width: '100%', height: 'calc(92vh - 4rem)'} } // Adjust height based on needs
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
               <p className="text-white text-3xl text-center px-4 flex flex-col">{slide.text} <Link href="" className='px-4 py-[6px] mt-5 rounded-md m-auto text-[14px] text-nowrap bg-green-500 text-white w-min h-min'>Expoler more</Link></p>
