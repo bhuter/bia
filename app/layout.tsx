@@ -5,11 +5,6 @@ import NavBar from "./pages/navbar";
 import Footer from "./pages/footer";
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "The African Touch - BIA  | Made in Rwanda",
-  description: "Rwanda Fashion Shop",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{

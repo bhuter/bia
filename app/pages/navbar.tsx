@@ -43,13 +43,13 @@ useEffect(() => {
                          height={70}
                         />
                     </div>
-                    <div className="flex items-center bg-gray-100 px-2 rounded-[25px] w-4/6 mt-2">
+                    <div className="flex items-center bg-gray-100 px-2 rounded-[6px] w-4/6 mt-2">
                       <input 
                       type="search" 
                       name="q" 
                       id="q" 
                       placeholder="Search fashion, store, category, ..."
-                      className="p-[13px] w-full bg-transparent text-sm outline-none"/>
+                      className="p-[15px] w-full bg-transparent text-sm outline-none"/>
                       <i id="searchBtn" className="bi bi-search px-[16px] cursor-pointer text-[15px] text-black"></i>
                     </div>
                 </div>
@@ -66,7 +66,9 @@ useEffect(() => {
                         </select>
                     </div>
                     <div>
+                      <Link href="/auth/login">
                         <i className="bi bi-person text-3xl text-gray-800 cursor-pointer"></i>
+                      </Link>
                     </div>
                     <div>
                       <i className="bi bi-cart text-2xl text-gray-800 cursor-pointer"></i>

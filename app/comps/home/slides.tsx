@@ -10,17 +10,17 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 const slides = [
   { image: '/imgs/bgslide1.jpg', text: 'Discover the Elegance of Rwandan Fashion' },
-  { image: '/imgs/c8.jpg', text: 'Handcrafted Baskets with a Touch of Tradition' },
-  { image: '/imgs/c10.jpg', text: 'Learn the Art of Tailoring with Us' },
-  { image: '/imgs/d1.jpg', text: 'Discover the Elegance of Rwandan Fashions' },
-  { image: '/imgs/c7.jpg', text: 'Handcrafted Baskets with a Touch of Tradition' },
-  { image: '/imgs/d7.jpg', text: 'Learn the Art of Tailoring with Us' },
-  { image: '/imgs/c6.jpg', text: 'Discover the Elegance of Rwandan Fashions' },
-  { image: '/imgs/d6.jpg', text: 'Handcrafted Baskets with a Touch of Tradition' },
-  { image: '/imgs/c5.jpg', text: 'Learn the Art of Tailoring with Us' },
-  { image: '/imgs/d8.jpg', text: 'Discover the Elegance of Rwandan Fashions' },
-  { image: '/imgs/c9.jpg', text: 'Handcrafted Baskets with a Touch of Tradition' },
-  { image: '/imgs/d5.jpg', text: 'Learn the Art of Tailoring with Us' },
+  { image: '/imgs/c8.JPG', text: 'Handcrafted Baskets with a Touch of Tradition' },
+  { image: '/imgs/c10.JPG', text: 'Learn the Art of Tailoring with Us' },
+  { image: '/imgs/d1.JPG', text: 'Discover the Elegance of Rwandan Fashions' },
+  { image: '/imgs/c7.JPG', text: 'Handcrafted Baskets with a Touch of Tradition' },
+  { image: '/imgs/d7.JPG', text: 'Learn the Art of Tailoring with Us' },
+  { image: '/imgs/c6.JPG', text: 'Discover the Elegance of Rwandan Fashions' },
+  { image: '/imgs/d6.JPG', text: 'Handcrafted Baskets with a Touch of Tradition' },
+  { image: '/imgs/c5.JPG', text: 'Learn the Art of Tailoring with Us' },
+  { image: '/imgs/d8.JPG', text: 'Discover the Elegance of Rwandan Fashions' },
+  { image: '/imgs/c9.JPG', text: 'Handcrafted Baskets with a Touch of Tradition' },
+  { image: '/imgs/d5.JPG', text: 'Learn the Art of Tailoring with Us' },
   
   // Add more slide objects as needed
 ];
