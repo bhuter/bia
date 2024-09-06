@@ -82,7 +82,7 @@ const Category: React.FC = () => {
         <>
         <div className="flex flex-wrap p-3">
        {categories.map((cat, key) =>(
-         <div className="flex flex-nowrap bg-white p-4 border border-slate-300 w-[300px] h-auto mr-3 mb-3 hover:shadow-md hover:border-none hover:rounded">
+         <div key={key} className="flex flex-nowrap bg-white p-4 border border-slate-300 w-[300px] h-auto mr-3 mb-3 hover:shadow-md hover:border-none hover:rounded">
          <div className="w-[130px] h-[100px] rounded-md">
          <img src={cat.image} alt={cat.name} className='w-full h-full object-cover rounded-sm' />
          </div>
