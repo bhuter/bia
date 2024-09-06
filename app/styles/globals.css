@@ -9,6 +9,7 @@ body{
  display: flex;
  flex-direction: column;
  justify-content: space-between;
+ background: whitesmoke;
 }
 main{
     margin-bottom: 20px;

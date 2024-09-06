@@ -3,7 +3,7 @@ import React from 'react';
 import SlideShow from "./comps/home/slides";
 import ProductCard from "./comps/product/card";
 import Category from './comps/product/category';
-
+import Link from 'next/link';
 const products = [
   {
    "name": "African Dress",
@@ -19,7 +19,7 @@ const products = [
   },
   {
     "name": "Stylish Dress",
-    "image": "/imgs/c1.JPG",
+    "image": "/imgs/c2.JPG",
     "price": "40000",
     "details": "Handmade dress by transforming tailor skills",
    },
@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <>
      <head>
-        <title>BIA | The African Touch | Home</title>
+        <title>BIA - The African Touch | Home</title>
       </head>
     <div className="flex justify-center items-center">
       <SlideShow />
@@ -112,6 +112,9 @@ export default function Home() {
       <h1 className="text-3xl font-semibold ">Best choices</h1>
       <div>
         <Category />
+        <div className="open flex justify-end px-9">
+        <Link href="" className='bg-blue-200  px-7 py-2'> See All</Link>
+       </div>
       </div>
     </div>
     <div className="pt-10">
