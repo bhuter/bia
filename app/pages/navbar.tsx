@@ -48,13 +48,13 @@ useEffect(() => {
                       type="search" 
                       name="q" 
                       id="q" 
-                      placeholder="Search fashion, store, category, ..."
+                      placeholder="Search product, store, category, ..."
                       className="p-[15px] w-full bg-transparent text-sm outline-none"/>
                       <i id="searchBtn" className="bi bi-search px-[16px] cursor-pointer text-[15px] text-black"></i>
                     </div>
                 </div>
                 <div className="flex items-center justify-between w-[30%] text-[14px]">
-                    <div className="font-medium text-gray-800 ">
+                    <div className="text-[16px] font-[100] font-serif text-black ">
                         <i className="bi bi-telephone"></i>
                         <span className="ml-2 mr-5">+250788282252</span>
                     </div>

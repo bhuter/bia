@@ -2,7 +2,7 @@
 import React from 'react';
 import SlideShow from "./comps/home/slides";
 import ProductCard from "./comps/product/card";
-
+import Category from './comps/product/category';
 
 const products = [
   {
@@ -19,7 +19,7 @@ const products = [
   },
   {
     "name": "Stylish Dress",
-    "image": "/imgs/c1.JPG",
+    "image": "/imgs/c2.JPG",
     "price": "40000",
     "details": "Handmade dress by transforming tailor skills",
    },
@@ -35,6 +35,7 @@ const products = [
     "price": "17000",
     "details": "Handmade dress by transforming tailor skills",
   },
+  /*
   {
     "name": "Gentlemen Wear",
     "image": "/imgs/d8.JPG",
@@ -96,19 +97,25 @@ const products = [
 "price": "17000",
 "details": "Handmade dress by transforming tailor skills",
 },
-    
+ */   
 ]
 export default function Home() {
   return (
     <>
      <head>
-        <title>BIA - The African Touch | Home</title>
+        <title>BIA | The African Touch | Home</title>
       </head>
     <div className="flex justify-center items-center">
       <SlideShow />
     </div>
     <div className="pt-10">
-      <h1 className="text-4xl font-semibold ">Top picks</h1>
+      <h1 className="text-3xl font-semibold ">Best choices</h1>
+      <div>
+        <Category />
+      </div>
+    </div>
+    <div className="pt-10">
+      <h1 className="text-3xl font-semibold ">Top picks</h1>
       <div className="p-4">
         <button className="px-6 py-2 rounded-2xl border m-2 hover:border-2 border-black hover:bg-slate-200">Most Popular</button>
         <button className="px-6 py-2 rounded-2xl border m-2 hover:border-2 border-black hover:bg-slate-200">Hot Selling</button>
@@ -116,7 +123,7 @@ export default function Home() {
         <button className="px-6 py-2 rounded-2xl border m-2 hover:border-2 border-black hover:bg-slate-200">Best Reveiwed</button>
       </div>
     </div>
-    <div className="flex flex-wrap gap-4 p-4">
+    <div className="flex flex-wrap gap-4 py-4">
       {products.map((item, index) => (
         <ProductCard 
         key = {index}
