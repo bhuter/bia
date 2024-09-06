@@ -19,7 +19,7 @@ const products = [
   },
   {
     "name": "Stylish Dress",
-    "image": "/imgs/c2.JPG",
+    "image": "/imgs/c1.JPG",
     "price": "40000",
     "details": "Handmade dress by transforming tailor skills",
    },
