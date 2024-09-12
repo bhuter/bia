@@ -35,7 +35,7 @@ const products = [
     "price": "17000",
     "details": "Handmade dress by transforming tailor skills",
   },
-  /*
+ 
   {
     "name": "Gentlemen Wear",
     "image": "/imgs/d8.JPG",
@@ -97,7 +97,7 @@ const products = [
 "price": "17000",
 "details": "Handmade dress by transforming tailor skills",
 },
- */   
+
 ]
 export default function Home() {
   return (
