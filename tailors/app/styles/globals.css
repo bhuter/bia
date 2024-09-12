@@ -15,7 +15,10 @@ body{
 }
 main{
     margin-bottom: 20px;
-    margin-top: 150px;
+    margin-top: 100px;
+}
+header{
+  background: linear-gradient(180deg, rgb(15 23 42 /1), silver);
 }
 /*footer*/
   footer .container{
