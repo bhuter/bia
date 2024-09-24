@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <>
      <head>
-        <title>BIA - The African Touch | Home</title>
+        <title>BIA Rwanda | Online Shopping of fashions and designs mats - The African Touch | Home </title>
       </head>
     <div className="flex justify-center items-center">
       <SlideShow />
@@ -117,6 +117,7 @@ export default function Home() {
        </div>
       </div>
     </div>
+    
     <div className="pt-10">
       <h1 className="text-3xl font-semibold ">Top picks</h1>
       <div className="p-4">

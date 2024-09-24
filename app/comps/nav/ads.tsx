@@ -26,8 +26,8 @@ useEffect(() => {
 }, []);
 
     return (
-        <div className={`p-[1px]  bg-yellow-100 w-full flex justify-center items-center transition-transform duration-500  ${isHidden ? '-translate-y-full fixed w-[95%] m-auto' : 'translate-y-0'}`}>
-            <i className="bi bi-megaphone text-yellow-700 text-2xl"></i>
+        <div className={`bg-red-500 w-full flex justify-center items-center transition-transform duration-500  ${isHidden ? '-translate-y-full fixed w-[95%] m-auto' : 'translate-y-0'}`}>
+            <i className="bi bi-megaphone text-slate-300 text-2xl"></i>
             <div className='flex items-center text-[14px]'>
                 {props.children}
             </div>   

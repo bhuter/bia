@@ -9,9 +9,7 @@ body{
  display: flex;
  flex-direction: column;
  justify-content: space-between;
- background: whitesmoke;
- border-right: 1px solid #ebebeb;
- border-left: 1px solid #ebebeb;
+ font-family: serif;
 }
 main{
     margin-bottom: 20px;
@@ -177,45 +175,34 @@ main{
     .back-to-top:hover {
       background-color: #f89e9e;
     }
-    /* styles/globals.css or components/Preloader.module.css */
-
-.fabric-roll {
-  width: 20px;
-  height: 60px;
-  background-color: yellow;
-  border-radius: 10px;
-  animation: rotate 1.5s infinite ease-in-out;
-}
-
-.fabric-roll:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-.fabric-roll:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes rotate {
-  0%, 100% {
-    transform: rotate(0deg);
+    
+    @media (max-width: 640px) {
+      .box {
+          min-width: 100%; /* Stack full width on very small screens */
+      }
   }
-  50% {
-    transform: rotate(360deg);
+  
+  @media (min-width: 640px) {
+      .box {
+          min-width: 48%; /* Two items per row on small screens */
+      }
   }
-}
-@keyframes pulse-custom {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-    background: linear-gradient(to right, #fbbf24, #3b82f6); /* Yellow to Steel Blue */
+  
+  @media (min-width: 768px) {
+      .box {
+          min-width: 30%; /* Three items per row on medium screens */
+      }
   }
-  50% {
-    transform: scale(1);
-    opacity: 0.7;
-    background: linear-gradient(to right, #60faa5, #fbbf24); /* Steel Blue to Yellow */
+  
+  @media (min-width: 1024px) {
+      .box {
+          min-width: 22%; /* Four items per row on large screens */
+      }
   }
-}
-
-.animate-pulse-custom {
-  animation: pulse-custom 0.9s infinite ease-in-out;
-}
+  
+  @media (min-width: 1280px) {
+      .box {
+          min-width: 16%; /* Six items per row on extra-large screens */
+      }
+  }
+  
