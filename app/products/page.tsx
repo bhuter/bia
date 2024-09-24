@@ -154,17 +154,17 @@ const Home = () =>{
                     <h4 className="my-2 font-medium text-sm uppercase">Price range</h4>
                     <select name="p_range" id="p_range" className="p-2 border text-slate-600 text-md" >
                         <option value="">Default</option>
-                        <option value="0">0 to 5,000 RWF</option>
-                        <option value="1">5,001 to 10,000 RWF</option>
-                        <option value="2">10,001 to 20,000 RWF</option>
-                        <option value="3">20,001 to 30,000 RWF</option>
-                        <option value="4">30,001 to 50,000 RWF</option>
-                        <option value="5">50,001 to 70,000 RWF</option>
-                        <option value="6">70,001 to 100,000 RWF</option>
-                        <option value="7">100,001 to 150,000 RWF</option>
-                        <option value="8">150,001 to 200,000 RWF</option>
-                        <option value="9">200,001 to 500,000 RWF</option>
-                        <option value="10">500,001 to Above</option>
+                        <option value="0">0 to 5000 RWF</option>
+                        <option value="1">5001 to 10000 RWF</option>
+                        <option value="2">10001 to 20000 RWF</option>
+                        <option value="3">20001 to 30000 RWF</option>
+                        <option value="4">30001 to 50000 RWF</option>
+                        <option value="5">50001 to 70000 RWF</option>
+                        <option value="6">70001 to 100000 RWF</option>
+                        <option value="7">100001 to 150000 RWF</option>
+                        <option value="8">150001 to 200000 RWF</option>
+                        <option value="9">200001 to 500000 RWF</option>
+                        <option value="10">500001 to Above</option>
                     </select>
                     <div >
                         <h4 className="my-2 font-medium text-sm uppercase">Trends</h4>
