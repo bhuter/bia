@@ -97,7 +97,7 @@ useEffect(() => {
                   <i className="bi bi-bag mr-2"></i>
                   <span>Products</span>
                 </Link>
-                <Link href="https://tailors-one.vercel.app/" className="text-[#000] text-[17px] mr-[20px] hover:text-orange-600">
+                <Link href="https://tailors-one.vercel.app" className="text-[#000] text-[17px] mr-[20px] hover:text-orange-600">
                   <i className="bi bi-mortarboard mr-2"></i>
                   <span>Tailors Dream College</span>
                 </Link>
