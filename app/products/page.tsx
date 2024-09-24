@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import ProductCard from "../comps/product/card";
 import Preloader from "../comps/forms/Preloader";
+import Head from "next/head";
 
 const products = [
     {
@@ -125,9 +126,9 @@ const Home = () =>{
   
     return(    
     <>
-        <head>
-            <title>Products | Shirts , Trousers, Completes, ...</title>
-        </head>
+        <Head>
+            <title>Products | Shirts, Trousers, Completes, ...</title>
+        </Head>
         <div className="w-full h-full flex">
             {/* filter panel*/}
             <div className="filter bg-white shadow w-max p-4 m-[1px] gap-4 py-4 h-max mt-5">

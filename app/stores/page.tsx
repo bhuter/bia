@@ -1,12 +1,13 @@
 import React from "react";
 import StoreCard from "../comps/stores/card";
+import Head from "next/head";
 
 const Store = () => {
     return (
         <>
-            <head>
+            <Head>
                 <title>Shopping Stores - BIARwanda</title>
-            </head>
+            </Head>
             <div className="p-3">
                 <h1 className="text-3xl text-yellow-600 font-semibold">Our shopping stores</h1>
                 {/* Sort content */}
