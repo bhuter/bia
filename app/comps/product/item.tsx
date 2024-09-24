@@ -25,7 +25,7 @@ const Item = () => {
                 <div className="product w-full md:w-2/3">
                     <div className="title">
                         <div className="name text-xl font-bold">Gentlemen Wear</div>
-                        <div className="category py-2 px-3 mt-2 font-bold bg-red-400 rounded-full w-min text-white text-nowrap">Women's dress</div>
+                        <div className="category py-2 px-3 mt-2 font-bold bg-red-400 rounded-full w-min text-white text-nowrap">Women&apos;s dress</div>
                         <div className="details text-base my-1 pr-1">USB wired mouse for office, computer gaming, notebook business use, and more.</div>
                     </div>
                     <div className="album flex flex-col md:flex-row">

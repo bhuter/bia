@@ -138,14 +138,14 @@ const Home = () =>{
                     <h4 className="my-2 font-medium text-sm">PRODUCT CATEGORY</h4>
                     <div className="px-3">
                         <ul>
-                            <li className="text-slate-600 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_shoes"/><span className="mx-2">Mens Shoes</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_shirt"/><span className="mx-2">Mens Shirt</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_trouser"/><span className="mx-2">Mens Trouser</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="women_dress"/><span className="mx-2">Womens Dress</span></li>
+                            <li className="text-slate-600 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_shoes"/><span className="mx-2">Men&apos;s Shoes</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_shirt"/><span className="mx-2">Men&apos;s Shirt</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="men_trouser"/><span className="mx-2">Men&apos;s Trouser</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="women_dress"/><span className="mx-2">Women&apos;s Dress</span></li>
                             <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="completes"/><span className="mx-2">completes</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="women_shoes"/><span className="mx-2">Womens Shoes</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="kid_completes"/><span className="mx-2">Kids Completes</span></li>
-                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="kimono"/><span className="mx-2">Womens Kimono</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="women_shoes"/><span className="mx-2">Women&apos;s Shoes</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="kid_completes"/><span className="mx-2">Kid&apos;s Completes</span></li>
+                            <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="kimono"/><span className="mx-2">Women&apos;s Kimono</span></li>
                             <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="vases"/><span className="mx-2">Vases</span></li>
                             <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="baskets"/><span className="mx-2">Baskets</span></li>
                             <li className="text-slate-800 text-md"><input type="checkbox" name="p_cat" id="p_cat" value="table_mats_set"/><span className="mx-2">Table Mats sets</span></li>
