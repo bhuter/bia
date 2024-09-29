@@ -14,7 +14,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ name, image, price, details }) => {
     return (
-      <div className="w-full max-w-[240px] rounded overflow-hidden shadow-lg bg-white min-h-[50vh] mx-auto">
+      <div className="w-full max-w-[240px] rounded overflow-hidden shadow-lg bg-white min-h-[50vh] mx-auto my-2">
         <img className="w-full h-[200px] object-cover" src={image} alt={name} />
         <div className="px-3 py-4 flex flex-col justify-between min-h-32">
           <Link href="/product_detail/"> 
@@ -27,7 +27,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ name, image, price, details }
           )}
           <div className={`${details === "" ? 'flex justify-between' : 'flex justify-between max-h-[7vh]'}`}>
             <span className="text-red-500 font-bold mt-4">{new Intl.NumberFormat("en-US").format(Number(price))} RWF</span>
-            <button className="float-right rounded-full mt-3 p-2 w-10 h-10 border hover:text-orange-500 hover:bg-lime-300">
+            <button className="float-right rounded-full mt-3 p-2 w-10 h-10 border hover:text-white hover:bg-red-500">
               <i className="bi bi-cart-fill"></i>
             </button>
           </div>

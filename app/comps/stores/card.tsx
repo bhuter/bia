@@ -34,7 +34,7 @@ const StoreCard: React.FC<ProductCardProps> = ({ name, image, location, reviews,
             </div>
           </div>
           <h1 className="font-semibold text-lg md:text-xl my-2 md:my-4 text-black">{name}</h1>
-          <div className="tel bg-green-600 bg-opacity-30 rounded-3xl w-max flex py-1 px-3 md:px-4 text-xs md:text-base font-semibold">
+          <div className="text-slate-100 bg-green-600 bg-opacity-30 rounded-3xl w-max flex py-1 px-3 md:px-4 text-xs md:text-base font-semibold">
             <i className="bi bi-telephone mr-1"></i>
             <span>+{tel}</span>
           </div>

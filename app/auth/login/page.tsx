@@ -4,14 +4,14 @@ import LoginForm from '@/app/comps/forms/loginForm';
 
 const Login: React.FC = () => {
   return (
-    <>
+    <div>
       <head>
         <title>Login - Bia The African Touch</title>
       </head>
       {/** login form */}
       <LoginForm />
      
-    </>
+    </div>
   );
 };
 

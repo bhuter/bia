@@ -15,4 +15,17 @@ client.query("select * from users", (err, res)=>{
     }else{
         console.log(res.rows);
     }
-})
+})app.get("/", (req: any, res: { json: (arg0: string) => any; }) => {
+    const sql = "SELECT * FROM users";
+    client.query(sql, (err: { message: string; }, data: { rows: any; })=>{
+     if(err) return res.json("Error: "+err.message);
+     return res.json(data.rows);
+    })
+ });
+ app.get("/users", (req: any, res: { json: (arg0: string) => any; }) => {
+     const sql = "SELECT * FROM users";
+     client.query(sql, (err: { message: string; }, data: { rows: any; })=>{
+      if(err) return res.json("Error: "+err.message);
+      return res.json(data.rows);
+     })
+  });

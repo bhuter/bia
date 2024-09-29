@@ -186,7 +186,7 @@ const Home = () =>{
                 <h1 className="text-3xl font-semibold text-yellow-500">Intract with our smart picks and design</h1>
                 
               <div>
-                <div className="flex flex-wrap gap-4 py-4 ">
+                <div className="flex flex-wrap py-4 ">
                     {products.map((item, index) => (
                         <ProductCard 
                           key = {index}
