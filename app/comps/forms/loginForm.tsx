@@ -1,13 +1,12 @@
-// app/comps/forms/loginForm.tsx
 "use client"; // Make sure this is at the top of the file
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-import { useRouter } from 'next/navigation'; // Use next/navigation for app directory
+import { useRouter } from 'next/navigation';
 
 const LoginForm: React.FC = () => {
-    const router = useRouter(); // Get the router instance
+    const router = useRouter();
     const [formData, setFormData] = useState({
         userName: "",
         password: ""
@@ -15,62 +14,62 @@ const LoginForm: React.FC = () => {
     const [responseMessage, setResponseMessage] = useState("");
     const [isSuccess, setIsSuccess] = useState(false);
     const [isError, setIsError] = useState(false);
+    const [loading, setLoading] = useState(false); // Add loading state
 
-    // Handle form input changes
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
     const handleLogin = async (e: React.FormEvent) => {
-      e.preventDefault();
-      const { userName, password } = formData;
-  
-      // Validate inputs
-      if (!userName || !password) {
-          setResponseMessage("Both fields are required.");
-          setIsError(true);
-          setIsSuccess(false);
-          return;
-      }
-  
-      try {
-          // Make the login API call
-          const response = await axios.post("http://localhost:5000/login", formData);
-          
-          // Update localStorage with the new session
-          localStorage.setItem('userSession', JSON.stringify({
-              id: response.data.user.id,
-              name: response.data.user.name,
-              session_id: response.data.user.session_id,
-          }));
-  
-          setResponseMessage(response.data.message || "Login successfully!");
-          setIsSuccess(true);
-          setIsError(false);
-          router.push('/'); 
-      } catch (error: unknown) {
-          if (axios.isAxiosError(error)) {
-              setResponseMessage(error.response?.data.message || "Login failed due to server error.");
-              setIsError(true);
-              setIsSuccess(false);
-          } else if (error instanceof Error) {
-              setResponseMessage(error.message || "An unknown error occurred.");
-              setIsError(true);
-              setIsSuccess(false);
-          } else {
-              setResponseMessage("An unexpected error occurred.");
-              setIsError(true);
-              setIsSuccess(false);
-          }
-      }
-  
-      // Clear message after a few seconds
-      setTimeout(() => {
-          setResponseMessage("");
-      }, 3000);
-  };
-  
+        e.preventDefault();
+        const { userName, password } = formData;
+
+        if (!userName || !password) {
+            setResponseMessage("Both fields are required.");
+            setIsError(true);
+            setIsSuccess(false);
+            return;
+        }
+
+        setLoading(true); // Start loading
+        try {
+            const response = await axios.post("http://localhost:5000/login", formData);
+            
+            // Update localStorage with the new session
+            localStorage.setItem('userSession', JSON.stringify({
+                id: response.data.user.id,
+                name: response.data.user.name,
+                session_id: response.data.user.session_id,
+            }));
+
+            setResponseMessage(response.data.message || "Login successfully!");
+            setIsSuccess(true);
+            setIsError(false);
+            router.push('/');
+        } catch (error: unknown) {
+            if (axios.isAxiosError(error)) {
+                setResponseMessage(error.response?.data.message || "Login failed due to server error.");
+                setIsError(true);
+                setIsSuccess(false);
+            } else if (error instanceof Error) {
+                setResponseMessage(error.message || "An unknown error occurred.");
+                setIsError(true);
+                setIsSuccess(false);
+            } else {
+                setResponseMessage("An unexpected error occurred.");
+                setIsError(true);
+                setIsSuccess(false);
+            }
+        } finally {
+            setLoading(false); // Stop loading
+        }
+
+        // Clear message after a few seconds
+        setTimeout(() => {
+            setResponseMessage("");
+        }, 3000);
+    };
 
     return (
         <div className="flex justify-center p-2 mt-10">
@@ -80,7 +79,7 @@ const LoginForm: React.FC = () => {
                     <p>{responseMessage}</p>
                     <span className="bi bi-x ml-3 cursor-pointer text-[18px]" onClick={() => setResponseMessage("")}></span>
                 </div>
-                <form onSubmit={handleLogin}>
+                <form onSubmit={handleLogin} autoComplete='off'>
                     <div className="flex w-full border border-slate-400 rounded px-3 py-[8px] my-3">
                         <i className="bi bi-person text-lg text-gray-800"></i>
                         <input
@@ -90,6 +89,7 @@ const LoginForm: React.FC = () => {
                             placeholder="Email address or phone"
                             className="w-full py-1 px-2 rounded text-gray-800 bg-transparent outline-none"
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="flex w-full border border-slate-400 rounded px-3 py-[8px] my-3">
@@ -101,11 +101,12 @@ const LoginForm: React.FC = () => {
                             placeholder="Password"
                             className="w-full py-1 px-2 rounded text-gray-800 bg-transparent outline-none"
                             onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className="mt-3">
-                        <button type="submit" className="w-full border my-5 bg-green-400 py-[10px] rounded-md text-white">
-                            <i className="bi bi-box-arrow-in-right text-white"></i> LOGIN
+                        <button type="submit" className="w-full border my-5 bg-green-400 py-[10px] rounded-md text-white" disabled={loading}>
+                            {loading ? 'Logging in...' : <><i className="bi bi-box-arrow-in-right text-white"></i> LOGIN</>}
                         </button>
                     </div>
                 </form>

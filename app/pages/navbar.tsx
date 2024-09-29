@@ -1,12 +1,33 @@
-"use client";import Ads from "../comps/nav/ads";
+"use client";
+import Ads from "../comps/nav/ads";
 import Link from "next/link";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Image from "next/image";
 import React, { useEffect, useState } from 'react';
+import CartDropdown from "../comps/nav/cart";
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  image: string;
+}
 
 const NavBar = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [userInitials, setUserInitials] = useState<string | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  // Cart items state (moved to NavBar for easy access)
+  const [cartItems, setCartItems] = useState<CartItem[]>([
+    { id: 1, name: 'T-shirt', price: 25000, quantity: 1, image: '/imgs/c3.jpg' },
+    { id: 2, name: 'Handmade Basket', price: 15000, quantity: 1, image: '/imgs/d1.jpg' },
+    { id: 3, name: 'Hebrwe', price: 8000, quantity: 1, image: '/imgs/d4.jpg' },
+    { id: 4, name: 'Basket', price: 9000, quantity: 1, image: '/imgs/c6.jpg' },
+    { id: 5, name: 'Sweed bag', price: 12350, quantity: 1, image: '/imgs/d8.jpg' },
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +52,9 @@ const NavBar = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Calculate total cart item count
+  const totalCartItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className={`z-50 fixed top-0 bg-white w-[95%] ${isHidden ? 'shadow' : 'shadow-sm'}`}>
@@ -66,7 +90,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        {/* Contact and cart */}
+        {/* Contact, language, and cart */}
         <div className="flex items-center justify-between w-[33%] text-[14px]">
           <div className="text-[16px] font-[100] font-serif text-black">
             <i className="bi bi-telephone text-lg text-slate-400"></i>
@@ -84,8 +108,34 @@ const NavBar = () => {
           </div>
           <div>
             {userInitials ? (
-              <div className="bg-green-400 text-white rounded-full flex items-center justify-center text-xl" style={{ width: '40px', height: '40px' }}>
-                {userInitials}
+              <div className="relative flex items-center bg-slate-100 rounded-xl py-[3px] px-2 cursor-pointer hover:bg-slate-200 transition-all duration-300" onClick={() => setIsOpen(!isOpen)}>
+                <div className="bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg" style={{ width: '30px', height: '30px' }}>
+                  {userInitials}
+                </div>
+                <i className={`bi bi-chevron-down font-bold ml-2 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
+              
+                {isOpen && (
+                  <div className="absolute right-0 top-12 mt-2 w-40 bg-white rounded-lg shadow-xl overflow-hidden z-50">
+                    <ul className="flex flex-col py-2 px-3 space-y-2">
+                      <li className="flex items-center p-1 rounded-lg hover:bg-gray-100 transition-all">
+                        <i className="bi bi-person mr-2 text-lg text-green-500"></i>
+                        <Link href="/dashboard" className="text-gray-700 hover:text-green-500 transition-colors">Dashboard</Link>
+                      </li>
+                      <li className="flex items-center p-1 rounded-lg hover:bg-gray-100 transition-all">
+                        <i className="bi bi-gear-fill mr-2 text-lg text-blue-500"></i>
+                        <Link href="/settings" className="text-gray-700 hover:text-blue-500 transition-colors">Settings</Link>
+                      </li>
+                      <li className="flex items-center p-1 rounded-lg hover:bg-gray-100 transition-all">
+                        <i className="bi bi-envelope mr-2 text-lg text-red-500"></i>
+                        <Link href="/messages" className="text-gray-700 hover:text-red-500 transition-colors">Messages</Link>
+                      </li>
+                      <li className="flex items-center p-1 rounded-lg hover:bg-gray-100 transition-all">
+                        <i className="bi bi-box-arrow-right mr-2 text-lg text-orange-500"></i>
+                        <Link href="/logout" className="text-gray-700 hover:text-orange-500 transition-colors">Logout</Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
               </div>
             ) : (
               <Link href="/auth/login">
@@ -93,13 +143,28 @@ const NavBar = () => {
               </Link>
             )}
           </div>
-          <div>
-            <i className="bi bi-cart text-2xl text-gray-800 cursor-pointer"></i>
-            <span className="absolute mt-[-5px] ml-[-10px] bg-red-500 text-white px-[5px] rounded-full text-[12px]">0</span>
-          </div>
+          
+          {/* Cart with item count */}
+          <div className="relative">
+  <div onClick={() => setIsCartOpen(!isCartOpen)} className="cursor-pointer relative">
+    <i className="bi bi-cart text-2xl text-gray-800"></i>
+    {totalCartItems > 0 && (
+      <span className="absolute mt-[-3px] mr-[-3px] top-0 right-0 bg-red-500 text-white px-[5px] rounded-full text-[12px]">
+        {totalCartItems}
+      </span>
+    )}
+  </div>
+
+  {/* Cart Dropdown */}
+  {isCartOpen && (
+    <div className="absolute right-0 mt-3 w-80 bg-white shadow-lg rounded-lg overflow-hidden z-50">
+      <CartDropdown cartItems={cartItems} setCartItems={setCartItems} />
+    </div>
+  )}
+</div>
+
         </div>
       </nav>
-
       {/* Menu */}
       <menu className={`flex justify-between pb-2 pl-[25px] transition-transform duration-500 ${isHidden ? 'fixed -translate-y-full opacity-0' : 'opacity-100 -translate-y-0'}`}>
         <div>

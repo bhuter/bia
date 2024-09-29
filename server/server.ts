@@ -123,14 +123,29 @@ app.post("/login", async (req: any, res: any) => {
 
 
 // Logout user
-app.post("/logout", (req: any, res: any) => {
-    req.session.destroy((err: any) => {
-        if (err) {
-            return res.status(500).json({ message: "Error: " + err.message });
+app.post("/logout", async (req: any, res: any) => {
+    const sessionId = req.body.session_id; // Expecting the session ID from the client
+
+    if (!sessionId) {
+        return res.status(400).json({ message: "No session ID provided." });
+    }
+
+    try {
+        // Update the session's logout date
+        const updateSql = "UPDATE sessions SET logout_date = NOW() WHERE session_id = $1 RETURNING *";
+        const result = await client.query(updateSql, [sessionId]);
+
+        if (result.rowCount === 0) {
+            return res.status(404).json({ message: "Session not found." });
         }
+
         return res.status(200).json({ message: "Logout successful." });
-    });
+    } catch (error) {
+        return res.status(500).json({ message: "Error: " + (error instanceof Error ? error.message : "Unknown error occurred.") });
+    }
 });
+
+
 
 app.listen(5000, () => {
     console.log("Server is running");

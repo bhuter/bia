@@ -12,11 +12,11 @@ body{
  display: flex;
  flex-direction: column;
  justify-content: space-between;
- font-family: 'Merriweather', serif;
+ font-family: serif;
 }
 main{
     margin-bottom: 20px;
-    margin-top: 150px;
+    margin-top: 140px;
 }
 /*footer*/
   footer .container{
